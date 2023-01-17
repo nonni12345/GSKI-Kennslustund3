@@ -1,5 +1,9 @@
+
 class Pizza:
-    def __init__(self,id, toppings = [], served = False) -> None:
+
+    def __init__(self, id, toppings = [], served = False) -> None:
+
+        self.id = id
         self.toppings = toppings
         self.served = served
 
@@ -7,8 +11,10 @@ class Pizza:
         self.toppings.append("Pepperoni")
         return self.toppings
     
+
     def serve(self):
         self.served = True
+
 
     def __str__(self) -> str:
         rtrnStr = ""
@@ -18,11 +24,13 @@ class Pizza:
         return f"{self.toppings}\n{self.served}"
 
 class Pizzas:
+
     def __init__(self, pizzas = []) -> None:
         self.pizzas = pizzas
 
-    def add_pizza(self,topping1,topping2=None,topping3=None):
-        pizzaid = self.get_id()
+
+    def add_pizza(self, topping1, topping2=None, topping3=None):
+        pizzaid = self.__get_id()
         toppings = [topping1]
         if topping2 != None:
             toppings.append(topping2)
@@ -31,12 +39,14 @@ class Pizzas:
         pizza = Pizza(id,toppings)
         self.pizzas.append(pizza)
 
-    def get_id(self):
+
+    def __get_id(self):
         return len(self.pizzas)+1
 
 
-# pizza = Pizza
-# print(pizza)
-# pizza.add_toppings()
-# pizza.serve()
-# print(pizza)
+
+
+# pizza = Pizza(1, ["pepperoni"])
+
+
+# pizza.__geti
